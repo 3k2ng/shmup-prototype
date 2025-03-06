@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crqj8x7523ffb"]
+
+[ext_resource type="Script" uid="uid://dbqsm3fdu8tb4" path="res://objects/bullet.gd" id="1_jdtw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jdtw5"]
+size = Vector2(24, 24)
+
+[node name="PlayerBullet" type="Area2D"]
+script = ExtResource("1_jdtw5")
+
+[node name="Polygon2D" type="Polygon2D" parent="." groups=["bullet", "player"]]
+polygon = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jdtw5")
