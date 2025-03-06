@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct6d1nlsopyud"]
+
+[ext_resource type="Script" uid="uid://bri48fb041do4" path="res://objects/player/player.gd" id="1_uwrxv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cj0n"]
+size = Vector2(8, 8)
+
+[node name="Game" type="Node"]
+
+[node name="Field" type="Camera2D" parent="."]
+
+[node name="Player" type="Area2D" parent="Field"]
+script = ExtResource("1_uwrxv")
+
+[node name="Polygon2D" type="Polygon2D" parent="Field/Player"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Field/Player"]
+shape = SubResource("RectangleShape2D_8cj0n")
